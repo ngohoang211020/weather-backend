@@ -1,0 +1,22 @@
+plugins {
+	id "java"
+	id "org.springframework.boot" version "${springBootVersion}"
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: "${swagger2Version}"
+	compile group: "io.springfox", name: "springfox-swagger-ui", version: "${swagger2Version}"
+	compile project(':weather-api')
+	compile project(':weather-data-jpa')
+	compile project(':weather-data-rest')
+}
+
+test {
+	useJUnitPlatform()
+}

@@ -1,0 +1,7 @@
+include 'weather'
+include 'weather-domain'
+include 'weather-api'
+include 'weather-data-rest'
+include 'weather-data-jpa'
+include 'weather-ui'
+

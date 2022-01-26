@@ -1,0 +1,45 @@
+buildscript {
+    ext {
+        appVersion = '0.0.1-SNAPSHOT'
+        springBootVersion = '2.4.3'
+        springManagementVersion = '1.0.11.RELEASE'
+        lombokVersion = '1.18.20'
+        mapstructVersion = "1.4.2.Final"
+        swagger2Version = '2.7.0'
+    }
+}
+plugins {
+	id "io.spring.dependency-management" version "${springManagementVersion}"
+	id "java"
+}
+
+subprojects {
+    group = 'com.oddle.app'
+    version = '0.0.1-SNAPSHOT'
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencyManagement {
+        /*dependencies {
+            dependency "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            dependency group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        }*/
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+        }
+    }
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    tasks.withType(JavaCompile) {
+        options.compilerArgs = [
+                '-Amapstruct.suppressGeneratorTimestamp=true'
+        ]
+    }
+}
