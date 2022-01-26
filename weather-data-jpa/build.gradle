@@ -21,10 +21,7 @@ dependencies {
     //runtimeOnly 'mysql:mysql-connector-java'
     runtimeOnly 'org.postgresql:postgresql'
     compile project(':weather-domain')
-    compileJava {
-        options.compilerArgs += "-Amapstruct.defaultComponentModel=spring"
-        options.compilerArgs += "-Amapstruct.unmappedTargetPolicy=ERROR"
-    }
+
 
 
 }
