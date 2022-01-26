@@ -45,7 +45,7 @@ public class RestOpenWeatherMapRepositoryImp implements RestOpenWeatherMapReposi
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(openWeatherMapCurrentUrl)
                 .queryParam("q", city)
                 .queryParam("apiKey", weatherMapAppId);
-        HttpHeaders headers = new HttpHeaders();gh
+        HttpHeaders headers = new HttpHeaders();
         HttpEntity<?> entity = new HttpEntity<>(headers);
         HttpEntity<CurrentWeatherDTO> weather = restTemplate.exchange(builder.toUriString(),
                 HttpMethod.GET, entity, CurrentWeatherDTO.class);
