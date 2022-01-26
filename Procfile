@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar build/libs/build_d4607eec.jar
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar build/libs/Weather-Backend.jar
