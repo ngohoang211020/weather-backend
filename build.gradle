@@ -20,7 +20,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'java-library'
-    jar.archiveBaseName = 'Weather-Backend.jar'
+    jar.archiveName = 'Weather-Backend.jar'
 
 
     repositories {
