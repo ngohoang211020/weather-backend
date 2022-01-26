@@ -35,6 +35,7 @@ public class CityEntity {
     // Latitude
     double latitude;
 
+
     @OneToMany(mappedBy="city", cascade = CascadeType.ALL)
     List<WeatherEntity> weathers;
 }

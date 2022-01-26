@@ -13,6 +13,7 @@ public interface JpaWeatherMapper {
 
     WeatherEntity mapToWeatherEntity(WeatherModel source);
 
+    @Mapping(target = "weathers", ignore = true)
     CityEntity mapToCityEntity(CityModel source);
 
     WeatherModel mapToWeatherModel(WeatherEntity source);
