@@ -21,8 +21,13 @@ public interface WeatherMapper {
     @Mapping(source = "geo.latitude", target = "latitude")
     @Mapping(source = "currentWeather.cityName", target = "name")
     @Mapping(source = "currentWeather.sys.country", target = "countryCode")
+    @Mapping(target = "id", ignore = true)
+
     CityModel mapToCityModel(CurrentWeatherDTO currentWeather, GeoDTO geo);
 
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "city", ignore = true)
     @Mapping(target = "date", expression = "java(LocalDateTime.ofInstant(Instant.ofEpochSecond(current.getDate()),TimeZone.getDefault().toZoneId()))")
     WeatherModel mapToWeatherModel(CurrentWeatherDTO current, WeatherMainDTO weather);
 
