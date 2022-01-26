@@ -4,4 +4,4 @@ include 'weather-api'
 include 'weather-data-rest'
 include 'weather-data-jpa'
 include 'weather-ui'
-
+rootProject.name = 'project1'

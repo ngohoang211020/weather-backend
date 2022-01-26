@@ -44,8 +44,5 @@ subprojects {
                 '-Amapstruct.suppressGeneratorTimestamp=true'
         ]
     }
-    jar {
-        archivesBaseName = 'project1'
-        archiveVersion = '1.0-SNAPSHOT'
-    }
+
 }
