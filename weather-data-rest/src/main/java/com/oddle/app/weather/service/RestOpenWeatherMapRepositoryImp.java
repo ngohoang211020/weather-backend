@@ -51,4 +51,17 @@ public class RestOpenWeatherMapRepositoryImp implements RestOpenWeatherMapReposi
                 HttpMethod.GET, entity, CurrentWeatherDTO.class);
         return weatherMapper.mapToCurrentWeatherModel(weather.getBody());
     }
+
+    @Override
+    public CurrentWeatherModel searchWeatherAtYourLocation(Float lat, Float lon) {
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(openWeatherMapCurrentUrl)
+                .queryParam("lat", lat)
+                .queryParam("lon",lon)
+                .queryParam("apiKey", weatherMapAppId);
+        HttpHeaders headers = new HttpHeaders();
+        HttpEntity<?> entity = new HttpEntity<>(headers);
+        HttpEntity<CurrentWeatherDTO> weather = restTemplate.exchange(builder.toUriString(),
+                HttpMethod.GET, entity, CurrentWeatherDTO.class);
+        return weatherMapper.mapToCurrentWeatherModel(weather.getBody());
+    }
 }

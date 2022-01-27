@@ -70,4 +70,11 @@ public class WeatherController {
         weatherService.updateHistoricalWeather(id, apiWeatherMapper.mapToWeatherDTO(weatherDTO));
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping(value = "/api/weather/currentLocation")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<CurrentWeatherModel> getWeathersAtYourLocation(@RequestParam(required = false) Float lat
+            ,@RequestParam(required = false) Float lon) {
+        return new ResponseEntity<>(weatherService.searchWeatherAtYourLocation(lat,lon), HttpStatus.OK);
+    }
 }

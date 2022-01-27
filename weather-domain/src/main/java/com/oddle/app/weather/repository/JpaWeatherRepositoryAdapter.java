@@ -48,4 +48,6 @@ public interface JpaWeatherRepositoryAdapter {
      * @param weather
      */
     void updateHistoricalWeather(Long id, WeatherModel weather);
+
+
 }

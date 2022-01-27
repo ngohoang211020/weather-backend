@@ -94,4 +94,9 @@ public class WeatherServiceImpl implements WeatherService {
     public void updateHistoricalWeather(Long id, WeatherModel weather) {
         jpaWeatherRepositoryAdapter.updateHistoricalWeather(id, weather);
     }
+
+    @Override
+    public CurrentWeatherModel searchWeatherAtYourLocation(Float lat, Float lon) {
+        return restWeatherService.searchWeatherAtYourLocation(lat,lon);
+    }
 }

@@ -16,4 +16,6 @@ public interface RestOpenWeatherMapRepository {
      * @return CurrentWeather
      */
     CurrentWeatherModel searchWeatherToday(String city);
+
+    CurrentWeatherModel searchWeatherAtYourLocation(Float lat, Float lon);
 }

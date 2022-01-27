@@ -53,4 +53,6 @@ public interface WeatherService {
      * @param weather
      */
     void updateHistoricalWeather(Long id, WeatherModel weather);
+
+    CurrentWeatherModel searchWeatherAtYourLocation(Float lat,Float lon);
 }
