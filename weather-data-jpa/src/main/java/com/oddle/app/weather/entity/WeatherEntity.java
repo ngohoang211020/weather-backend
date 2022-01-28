@@ -38,7 +38,7 @@ public class WeatherEntity {
     float pressure;
     float humidity;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = CityEntity.class, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = CityEntity.class,cascade = CascadeType.PERSIST)
     @JoinColumn(name = "cityId", referencedColumnName = "id", nullable = false)
     CityEntity city;
 }
